@@ -8,10 +8,10 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
       rel="stylesheet"
     />
-    <script
-      src="https://kit.fontawesome.com/a076d05399.js"
-      crossorigin="anonymous"
-    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
     <style>
       * {
         margin: 0;
@@ -80,6 +80,12 @@
       .hamburger {
         font-size: 24px;
         cursor: pointer;
+        color: #8b5cf6;
+      }
+
+      .header h2 {
+        color: #fff;
+        font-weight: 600;
       }
 
       /* Main content */
@@ -145,21 +151,21 @@
   <body>
     <div class="sidebar" id="sidebar">
       <a href="#" onclick="showSection('home')"
-        ><i class="fas fa-home"></i> Home</a
+        ><i class="fa-solid fa-house"></i> Home</a
       >
       <a href="#" onclick="showSection('games')"
-        ><i class="fas fa-gamepad"></i> Games</a
+        ><i class="fa-solid fa-gamepad"></i> Games</a
       >
       <a href="#" onclick="showSection('proxies')"
-        ><i class="fas fa-shield-alt"></i> Proxies</a
+        ><i class="fa-solid fa-shield-halved"></i> Proxies</a
       >
       <a href="#" onclick="showSection('misc')"
-        ><i class="fas fa-cogs"></i> Misc</a
+        ><i class="fa-solid fa-gear"></i> Misc</a
       >
     </div>
 
     <div class="header">
-      <i class="fas fa-bars hamburger" id="hamburger"></i>
+      <i class="fa-solid fa-bars hamburger" id="hamburger"></i>
       <h2>Nebula Hub</h2>
     </div>
 
