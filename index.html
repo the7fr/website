@@ -3,63 +3,223 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Game Portal</title>
+    <title>Nebula Hub</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
     <style>
-      body {
-        background: linear-gradient(135deg, #1a1a1a, #2c2c2c);
-        color: white;
-        font-family: Arial, sans-serif;
-        text-align: center;
+      * {
         margin: 0;
         padding: 0;
+        box-sizing: border-box;
+        font-family: "Inter", sans-serif;
       }
+
+      body {
+        background-color: #0f0f0f;
+        color: #fff;
+        display: flex;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      /* Sidebar */
+      .sidebar {
+        width: 250px;
+        background: #181818;
+        padding-top: 60px;
+        position: fixed;
+        top: 0;
+        left: -250px;
+        height: 100%;
+        transition: 0.3s ease;
+        z-index: 10;
+      }
+
+      .sidebar.open {
+        left: 0;
+      }
+
+      .sidebar a {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: #ccc;
+        text-decoration: none;
+        padding: 15px 25px;
+        transition: 0.2s;
+      }
+
+      .sidebar a:hover {
+        background: #222;
+        color: #8b5cf6;
+      }
+
+      .sidebar i {
+        font-size: 18px;
+      }
+
+      /* Header */
+      .header {
+        width: 100%;
+        background: #181818;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 25px;
+        position: fixed;
+        top: 0;
+        z-index: 5;
+      }
+
+      .hamburger {
+        font-size: 24px;
+        cursor: pointer;
+      }
+
+      /* Main content */
+      .content {
+        flex: 1;
+        margin-top: 70px;
+        margin-left: 0;
+        padding: 40px;
+        transition: margin-left 0.3s ease;
+        overflow-y: auto;
+        width: 100%;
+      }
+
+      .sidebar.open ~ .content {
+        margin-left: 250px;
+      }
+
       h1 {
         color: #8b5cf6;
-        margin-top: 40px;
+        margin-bottom: 15px;
       }
+
+      p {
+        color: #ccc;
+        max-width: 700px;
+        margin: 0 auto 40px auto;
+      }
+
+      /* Game grid */
       .game-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 20px;
-        padding: 40px;
       }
+
       .game-card {
         background: #181818;
-        border-radius: 12px;
-        padding: 15px;
-        transition: transform 0.2s;
+        border-radius: 10px;
+        padding: 10px;
+        transition: 0.2s;
       }
+
       .game-card:hover {
         transform: scale(1.05);
       }
+
       iframe {
         width: 100%;
         height: 250px;
         border: none;
         border-radius: 8px;
       }
+
+      .section {
+        display: none;
+      }
+
+      .section.active {
+        display: block;
+      }
     </style>
   </head>
   <body>
-    <h1>🎮 Game Hub</h1>
-    <p>Play fun HTML5 games directly in your browser!</p>
+    <div class="sidebar" id="sidebar">
+      <a href="#" onclick="showSection('home')"
+        ><i class="fas fa-home"></i> Home</a
+      >
+      <a href="#" onclick="showSection('games')"
+        ><i class="fas fa-gamepad"></i> Games</a
+      >
+      <a href="#" onclick="showSection('proxies')"
+        ><i class="fas fa-shield-alt"></i> Proxies</a
+      >
+      <a href="#" onclick="showSection('misc')"
+        ><i class="fas fa-cogs"></i> Misc</a
+      >
+    </div>
 
-    <div class="game-grid">
-      <div class="game-card">
-        <h3>Flappy Bird</h3>
-        <iframe src="https://funhtml5games.com?embed=flappy"></iframe>
+    <div class="header">
+      <i class="fas fa-bars hamburger" id="hamburger"></i>
+      <h2>Nebula Hub</h2>
+    </div>
+
+    <div class="content" id="content">
+      <div id="home" class="section active">
+        <h1>Welcome to Nebula Hub</h1>
+        <p>
+          Explore a world of fun HTML5 games, tools, and utilities — all in one
+          clean, modern site.
+        </p>
       </div>
 
-      <div class="game-card">
-        <h3>2048</h3>
-        <iframe src="https://funhtml5games.com?embed=2048"></iframe>
+      <div id="games" class="section">
+        <h1>🎮 Games</h1>
+        <div class="game-grid">
+          <div class="game-card">
+            <h3>Flappy Bird</h3>
+            <iframe src="https://funhtml5games.com?embed=flappy"></iframe>
+          </div>
+          <div class="game-card">
+            <h3>2048</h3>
+            <iframe src="https://funhtml5games.com?embed=2048"></iframe>
+          </div>
+          <div class="game-card">
+            <h3>Stack Tower</h3>
+            <iframe src="https://funhtml5games.com?embed=stack"></iframe>
+          </div>
+        </div>
       </div>
 
-      <div class="game-card">
-        <h3>Stack Tower</h3>
-        <iframe src="https://funhtml5games.com?embed=stack"></iframe>
+      <div id="proxies" class="section">
+        <h1>🛡️ Proxy Info</h1>
+        <p>
+          Proxy functionality isn't allowed on Vercel, but you can list safe web
+          tools or educational resources here instead.
+        </p>
+      </div>
+
+      <div id="misc" class="section">
+        <h1>⚙️ Misc Tools</h1>
+        <p>Coming soon: small utilities, fun scripts, and more.</p>
       </div>
     </div>
+
+    <script>
+      const sidebar = document.getElementById("sidebar");
+      const hamburger = document.getElementById("hamburger");
+      const sections = document.querySelectorAll(".section");
+
+      hamburger.addEventListener("click", () => {
+        sidebar.classList.toggle("open");
+      });
+
+      function showSection(id) {
+        sections.forEach((section) => {
+          section.classList.remove("active");
+        });
+        document.getElementById(id).classList.add("active");
+        sidebar.classList.remove("open");
+      }
+    </script>
   </body>
 </html>
-
