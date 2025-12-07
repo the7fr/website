@@ -1,205 +1,203 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Chinese Revolution — History Day Project</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-
-<style>
-    body {
-        margin: 0;
-        font-family: 'Inter', sans-serif;
-        background: #0e0f11;
-        color: #ffffff;
-        overflow-x: hidden;
-    }
-
-    /* HEADER */
-    header {
-        background: linear-gradient(135deg, #ff004c, #ff8c00);
-        padding: 60px 20px;
-        text-align: center;
-        color: white;
-        position: relative;
-    }
-
-    header h1 {
-        font-size: 48px;
-        font-weight: 800;
-        letter-spacing: -1px;
-        margin-bottom: 10px;
-        animation: fadeDown 1s ease-out;
-    }
-
-    header p {
-        font-size: 20px;
-        font-weight: 300;
-        opacity: 0.9;
-        animation: fadeUp 1s ease-out;
-    }
-
-    /* SECTION */
-    .section {
-        max-width: 900px;
-        margin: 80px auto;
-        padding: 40px;
-        background: rgba(255, 255, 255, 0.06);
-        border-radius: 20px;
-        backdrop-filter: blur(10px);
-        box-shadow: 0 0 25px rgba(255, 0, 70, 0.3);
-        opacity: 0;
-        transform: translateY(40px);
-        transition: all 0.8s ease-out;
-    }
-
-    .section.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    h2 {
-        font-size: 32px;
-        font-weight: 700;
-        margin-bottom: 20px;
-        border-left: 6px solid #ff004c;
-        padding-left: 12px;
-    }
-
-    ul, ol {
-        font-size: 17px;
-        line-height: 1.7;
-        opacity: 0.9;
-    }
-
-    /* NAV BAR */
-    nav {
-        display: flex;
-        justify-content: center;
-        gap: 25px;
-        padding: 18px;
-        background: #141518;
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-
-    nav a {
-        color: #ffffff;
-        font-weight: 500;
-        text-decoration: none;
-        transition: 0.3s;
-        padding-bottom: 4px;
-    }
-
-    nav a:hover {
-        color: #ff4f7b;
-        border-bottom: 2px solid #ff4f7b;
-    }
-
-    /* ANIMATIONS */
-    @keyframes fadeDown {
-        from { opacity: 0; transform: translateY(-20px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeUp {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Chinese Revolution — History Day Project</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-
-
 <body>
+  <header class="hero">
+    <div class="hero-inner">
+      <h1>Chinese Revolution</h1>
+      <p class="tag">History Day Project — evidence-based, source-driven web entry</p>
+      <nav class="topnav">
+        <a href="#overview" data-target="overview">Overview</a>
+        <a href="#timeline" data-target="timeline">Timeline</a>
+        <a href="#causes" data-target="causes">Causes</a>
+        <a href="#gallery" data-target="gallery">Gallery</a>
+        <a href="#sources" data-target="sources">Sources</a>
+      </nav>
+    </div>
+  </header>
 
-<header>
-    <h1>Chinese Revolution</h1>
-    <p>History Day Project — A Modern Interactive Overview</p>
-</header>
+  <main class="content">
+    <!-- Overview -->
+    <section id="overview" class="card reveal">
+      <h2>Overview</h2>
+      <p>
+        The term "Chinese Revolution" is used in this project to cover key 20th-century transformations in China.
+        The 1911 Xinhai Revolution ended Qing imperial rule and led to the Republic of China (Source 2). The later
+        conflict between the Kuomintang (KMT) and the Chinese Communist Party (CCP) — together with the Japanese invasion
+        — culminated in the CCP's victory and the founding of the People’s Republic of China in 1949 (Source 1). <span class="cite">(Source 2; Source 1)</span>
+      </p>
 
-<nav>
-    <a href="#overview">Overview</a>
-    <a href="#timeline">Timeline</a>
-    <a href="#causes">Causes</a>
-    <a href="#sources">Sources</a>
-</nav>
+      <p class="note">
+        In-text citations use your numbered source list. Click any source in the Sources section for exact bibliographic details.
+      </p>
+    </section>
 
-<!-- OVERVIEW -->
-<div id="overview" class="section">
-    <h2>Overview</h2>
-    <p>
-        The Chinese Revolution includes two major turning points in Chinese history:
-    </p>
-    <ul>
-        <li><b>1911 Xinhai Revolution:</b> Ended the Qing dynasty, forming the Republic of China.</li>
-        <li><b>1945–1949 Communist Revolution:</b> Established the People's Republic of China under Mao Zedong.</li>
-    </ul>
-</div>
+    <!-- Timeline -->
+    <section id="timeline" class="card reveal">
+      <h2>Timeline — Key Dates & Events</h2>
+      <ol>
+        <li><strong>1894–1911</strong> — Reform movements and revolutionary organizing before Xinhai (see Source 2).</li>
+        <li><strong>1911</strong> — Wuchang Uprising → end of Qing; Republic of China established (Source 2).</li>
+        <li><strong>1927–1937</strong> — KMT–CCP struggle; intermittent cooperation and conflicts (Source 9).</li>
+        <li><strong>1937–1945</strong> — Second Sino-Japanese War (context for later civil war; Source 1).</li>
+        <li><strong>1946–1949</strong> — Resumption of civil war; CCP victory and proclamation of PRC, Oct 1, 1949 (Source 1).</li>
+      </ol>
+      <p class="small">In-text citation examples: <span class="cite">(Source 1)</span> — secondary web summary; <span class="cite">(Source 3)</span> — primary photograph.</p>
+    </section>
 
-<!-- TIMELINE -->
-<div id="timeline" class="section">
-    <h2>Timeline</h2>
-    <ol>
-        <li>1911 — Wuchang Uprising</li>
-        <li>1912 — Republic of China founded</li>
-        <li>1927–1937 — Chinese Civil War (Phase 1)</li>
-        <li>1937–1945 — Second Sino-Japanese War</li>
-        <li>1946–1949 — Civil War resumes</li>
-        <li>October 1, 1949 — People’s Republic of China formed</li>
-    </ol>
-</div>
+    <!-- Causes -->
+    <section id="causes" class="card reveal">
+      <h2>Causes (Concise)</h2>
+      <ul>
+        <li>Long-term weakening of Qing rule and foreign intervention; social unrest (Source 2).</li>
+        <li>Growth of nationalism and new political ideas (Sun Yat-sen's movement; Source 10).</li>
+        <li>Strengthening of organized political parties (KMT and CCP), later rivalry (Source 9).</li>
+        <li>Japanese invasion (1937–45) that shifted power dynamics and legitimacy (Source 1).</li>
+      </ul>
+    </section>
 
-<!-- CAUSES -->
-<div id="causes" class="section">
-    <h2>Causes</h2>
-    <ul>
-        <li>Weak Qing government & foreign influence</li>
-        <li>Rise of nationalism and Sun Yat-sen</li>
-        <li>Conflict between KMT and CCP</li>
-        <li>Impact of Japanese invasion</li>
-    </ul>
-</div>
+    <!-- Gallery (placeholder for images you’ll add later) -->
+    <section id="gallery" class="card reveal">
+      <h2>Gallery (placeholders)</h2>
+      <p>Images are not embedded here — add photos later in /assets or link to primary-photo URLs from the Sources list (Source 3, Source 5).</p>
+      <div class="thumb-grid">
+        <div class="thumb">Image placeholder<br><span class="muted">Use Source 3 or 5</span></div>
+        <div class="thumb">Image placeholder<br><span class="muted">Use Source 6 or 7</span></div>
+        <div class="thumb">Image placeholder<br><span class="muted">High-res photo from Getty (Source 5)</span></div>
+      </div>
+    </section>
 
-<!-- SOURCES -->
-<div id="sources" class="section">
-    <h2>Primary & Secondary Sources</h2>
+    <!-- Sources (bibliography) -->
+    <section id="sources" class="card reveal">
+      <h2>Sources — Primary & Secondary (as provided)</h2>
 
-    <h3>Primary Sources</h3>
-    <ul>
-        <li>Library of Congress — Chinese Archives (.gov)</li>
-        <li>UNC Chapel Hill — Cultural Revolution Documents (.edu)</li>
-        <li>USC U.S.–China Institute — Primary Documents (.edu)</li>
-    </ul>
+      <p class="small">Click any entry to open the original link in a new tab. The numbering corresponds exactly to the list you gave me and the in-text citations above (Source 1–10).</p>
 
-    <h3>Secondary Sources</h3>
-    <ul>
-        <li>Columbia University — Asia for Educators (.edu)</li>
-        <li>Stanford SPICE Program (.edu)</li>
-        <li>U.S. State Department Historical Notes (.gov)</li>
-    </ul>
-</div>
+      <ol class="sources-list">
+        <li class="source-item secondary" data-url="https://history.state.gov/milestones/1945-1952/chinese-rev">
+          <strong>1</strong>
+          <div class="meta">
+            <div class="title">https://history.state.gov/milestones/1945-1952/chinese-rev</div>
+            <div class="date">12/4/25</div>
+            <div class="type">Secondary - Webpage</div>
+          </div>
+        </li>
 
-<script>
-    // Scroll reveal animation
-    const sections = document.querySelectorAll('.section');
+        <li class="source-item secondary" data-url="https://afe.easia.columbia.edu/main_pop/ps/ps_china.htm">
+          <strong>2</strong>
+          <div class="meta">
+            <div class="title">https://afe.easia.columbia.edu/main_pop/ps/ps_china.htm</div>
+            <div class="date">12/4/25</div>
+            <div class="type">Secondary - Webpage</div>
+          </div>
+        </li>
 
-    function reveal() {
-        const trigger = window.innerHeight * 0.88;
-        sections.forEach(section => {
-            const top = section.getBoundingClientRect().top;
-            if (top < trigger) {
-                section.classList.add('visible');
-            }
-        });
-    }
+        <li class="source-item primary" data-url="https://sova.si.edu/record/fsa.a2004.03?s=0&n=10&t=K&q=*&i=0">
+          <strong>3</strong>
+          <div class="meta">
+            <div class="title">https://sova.si.edu/record/fsa.a2004.03?s=0&n=10&t=K&q=*&i=0</div>
+            <div class="date">12/4/25</div>
+            <div class="type">Primary - Photo</div>
+          </div>
+        </li>
 
-    window.addEventListener('scroll', reveal);
-    reveal();
-</script>
+        <li class="source-item secondary" data-url="https://thetricontinental.org/newsletterissue/2-2024-china-socialism/">
+          <strong>4</strong>
+          <div class="meta">
+            <div class="title">https://thetricontinental.org/newsletterissue/2-2024-china-socialism/</div>
+            <div class="date">12/4/25</div>
+            <div class="type">Secondary - Letter</div>
+          </div>
+        </li>
 
+        <li class="source-item primary" data-url="https://www.gettyimages.com/photos/xinhai-revolution">
+          <strong>5</strong>
+          <div class="meta">
+            <div class="title">https://www.gettyimages.com/photos/xinhai-revolution</div>
+            <div class="date">12/4/25</div>
+            <div class="type">Primary - Photographs</div>
+          </div>
+        </li>
+
+        <li class="source-item primary" data-url="https://www.nationalarchives.gov.uk/education/resources/the-chinese-civil-war/the-chinese-civil-war-source-2a/">
+          <strong>6</strong>
+          <div class="meta">
+            <div class="title">https://www.nationalarchives.gov.uk/education/resources/the-chinese-civil-war/the-chinese-civil-war-source-2a/</div>
+            <div class="date">12/5/25</div>
+            <div class="type">Primary - Letter</div>
+          </div>
+        </li>
+
+        <li class="source-item primary" data-url="https://www.thechinastory.org/chinese-newspapers-and-red-guard-tabloids-a-cultural-revolution-puzzle/">
+          <strong>7</strong>
+          <div class="meta">
+            <div class="title">https://www.thechinastory.org/chinese-newspapers-and-red-guard-tabloids-a-cultural-revolution-puzzle/</div>
+            <div class="date">12/5/25</div>
+            <div class="type">Primary - Newspaper</div>
+          </div>
+        </li>
+
+        <li class="source-item secondary" data-url="https://www.britannica.com/event/Chinese-Revolution-1911-1912">
+          <strong>8</strong>
+          <div class="meta">
+            <div class="title">https://www.britannica.com/event/Chinese-Revolution-1911-1912</div>
+            <div class="date">12/5/25</div>
+            <div class="type">Secondary - Webpage</div>
+          </div>
+        </li>
+
+        <li class="source-item secondary" data-url="https://www.sup.org/books/asian-studies/politics-rights-and-1911-revolution-china/excerpt/introduction">
+          <strong>9</strong>
+          <div class="meta">
+            <div class="title">https://www.sup.org/books/asian-studies/politics-rights-and-1911-revolution-china/excerpt/introduction</div>
+            <div class="date">12/5/25</div>
+            <div class="type">Secondary - Book</div>
+          </div>
+        </li>
+
+        <li class="source-item secondary" data-url="https://ph.china-embassy.gov.cn/eng/zt/Xinhai/201201/t20120112_1334732.htm">
+          <strong>10</strong>
+          <div class="meta">
+            <div class="title">https://ph.china-embassy.gov.cn/eng/zt/Xinhai/201201/t20120112_1334732.htm</div>
+            <div class="date">12/5/25</div>
+            <div class="type">Secondary - Webpage</div>
+          </div>
+        </li>
+      </ol>
+
+      <div class="bibliography-note">
+        <p><strong>Project rules & formatting reminders</strong></p>
+        <ul>
+          <li>No more than 1,200 student words. Use NHDWebCentral formatting if entering the contest.</li>
+          <li>All pages/sections are linked on this single-page site. Multimedia must be cited: images = Sources 3,5,6,7.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- citation modal -->
+  <div id="citeModal" class="modal" aria-hidden="true">
+    <div class="modal-inner" role="dialog" aria-modal="true">
+      <button id="closeModal" class="close">×</button>
+      <div id="modalContent" class="modal-content"></div>
+      <div class="modal-actions">
+        <a id="openLink" href="#" target="_blank" rel="noopener" class="btn">Open original source</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="foot-inner">
+      <small>Prepared for History Day. In-text citations refer to your numbered source list (1–10).</small>
+    </div>
+  </footer>
+
+  <script src="index.js"></script>
 </body>
 </html>
