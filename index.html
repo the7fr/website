@@ -1,231 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nebula Hub</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-    <style>
-      * {
+<head>
+<meta charset="UTF-8">
+<title>Chinese Revolution — History Day Project</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f5f5f5;
+        padding: 20px;
         margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Inter", sans-serif;
-      }
-
-      body {
-        background-color: #0f0f0f;
-        color: #fff;
-        display: flex;
-        height: 100vh;
-        overflow: hidden;
-      }
-
-      /* Sidebar */
-      .sidebar {
-        width: 250px;
-        background: #181818;
-        padding-top: 60px;
-        position: fixed;
-        top: 0;
-        left: -250px;
-        height: 100%;
-        transition: 0.3s ease;
-        z-index: 10;
-      }
-
-      .sidebar.open {
-        left: 0;
-      }
-
-      .sidebar a {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        color: #ccc;
-        text-decoration: none;
-        padding: 15px 25px;
-        transition: 0.2s;
-      }
-
-      .sidebar a:hover {
-        background: #222;
-        color: #8b5cf6;
-      }
-
-      .sidebar i {
-        font-size: 18px;
-      }
-
-      /* Header */
-      .header {
-        width: 100%;
-        background: #181818;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 15px 25px;
-        position: fixed;
-        top: 0;
-        z-index: 5;
-      }
-
-      .hamburger {
-        font-size: 24px;
-        cursor: pointer;
-        color: #8b5cf6;
-      }
-
-      .header h2 {
-        color: #fff;
-        font-weight: 600;
-      }
-
-      /* Main content */
-      .content {
-        flex: 1;
-        margin-top: 70px;
-        margin-left: 0;
-        padding: 40px;
-        transition: margin-left 0.3s ease;
-        overflow-y: auto;
-        width: 100%;
-      }
-
-      .sidebar.open ~ .content {
-        margin-left: 250px;
-      }
-
-      h1 {
-        color: #8b5cf6;
-        margin-bottom: 15px;
-      }
-
-      p {
-        color: #ccc;
-        max-width: 700px;
-        margin: 0 auto 40px auto;
-      }
-
-      /* Game grid */
-      .game-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-      }
-
-      .game-card {
-        background: #181818;
+    }
+    .container {
+        max-width: 900px;
+        margin: auto;
+        background: white;
+        padding: 20px;
         border-radius: 10px;
-        padding: 10px;
-        transition: 0.2s;
-      }
-
-      .game-card:hover {
-        transform: scale(1.05);
-      }
-
-      iframe {
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1, h2, h3 { margin-top: 25px; }
+    nav a {
+        margin-right: 15px;
+        text-decoration: none;
+        color: #0066ff;
+    }
+    .gallery img {
         width: 100%;
-        height: 250px;
-        border: none;
-        border-radius: 8px;
-      }
+        margin-bottom: 10px;
+        border-radius: 6px;
+    }
+    .section {
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid #ddd;
+    }
+</style>
+</head>
 
-      .section {
-        display: none;
-      }
+<body>
+<div class="container">
 
-      .section.active {
-        display: block;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="sidebar" id="sidebar">
-      <a href="#" onclick="showSection('home')"
-        ><i class="fa-solid fa-house"></i> Home</a
-      >
-      <a href="#" onclick="showSection('games')"
-        ><i class="fa-solid fa-gamepad"></i> Games</a
-      >
-      <a href="#" onclick="showSection('proxies')"
-        ><i class="fa-solid fa-shield-halved"></i> Proxies</a
-      >
-      <a href="#" onclick="showSection('misc')"
-        ><i class="fa-solid fa-gear"></i> Misc</a
-      >
-    </div>
+<h1>Chinese Revolution — History Day Project</h1>
+<p>This website provides an overview, timeline, images, and primary & secondary sources for the Chinese Revolution.</p>
 
-    <div class="header">
-      <i class="fa-solid fa-bars hamburger" id="hamburger"></i>
-      <h2>Nebula Hub</h2>
-    </div>
+<nav>
+    <a href="#overview">Overview</a>
+    <a href="#timeline">Timeline</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#sources">Sources</a>
+</nav>
 
-    <div class="content" id="content">
-      <div id="home" class="section active">
-        <h1>Welcome to Nebula Hub</h1>
-        <p>
-          Explore a world of fun HTML5 games, tools, and utilities — all in one
-          clean, modern site.
-        </p>
-      </div>
+<!-- OVERVIEW -->
+<div id="overview" class="section">
+<h2>Overview</h2>
 
-      <div id="games" class="section">
-        <h1>🎮 Games</h1>
-        <div class="game-grid">
-          <div class="game-card">
-            <h3>Flappy Bird</h3>
-            <iframe src="https://funhtml5games.com?embed=flappy"></iframe>
-          </div>
-          <div class="game-card">
-            <h3>2048</h3>
-            <iframe src="https://funhtml5games.com?embed=2048"></iframe>
-          </div>
-          <div class="game-card">
-            <h3>Stack Tower</h3>
-            <iframe src="https://funhtml5games.com?embed=stack"></iframe>
-          </div>
-        </div>
-      </div>
+<p>
+The term <b>Chinese Revolution</b> can refer to two major events:
+</p>
 
-      <div id="proxies" class="section">
-        <h1>🛡️ Proxy Info</h1>
-        <p>
-          Proxy functionality isn't allowed on Vercel, but you can list safe web
-          tools or educational resources here instead.
-        </p>
-      </div>
+<ul>
+    <li><b>1911 Xinhai Revolution</b> — overthrew the Qing dynasty and established the Republic of China.<br>
+        <i>(Source: Columbia University Asia for Educators — .edu)</i>
+    </li>
 
-      <div id="misc" class="section">
-        <h1>⚙️ Misc Tools</h1>
-        <p>Coming soon: small utilities, fun scripts, and more.</p>
-      </div>
-    </div>
+    <li><b>Chinese Communist Revolution (1945–1949)</b> — the Chinese Communist Party defeated the Kuomintang and founded the People’s Republic of China on October 1, 1949.<br>
+        <i>(Verified by Stanford/SPICE + U.S. State Dept.)</i>
+    </li>
+</ul>
 
-    <script>
-      const sidebar = document.getElementById("sidebar");
-      const hamburger = document.getElementById("hamburger");
-      const sections = document.querySelectorAll(".section");
+<h3>Causes (Short Summary)</h3>
+<ul>
+    <li>Qing dynasty weakened by foreign invasions and internal rebellions</li>
+    <li>Rise of nationalism and Sun Yat-sen’s ideas (Three People’s Principles)</li>
+    <li>Conflict between the Kuomintang (KMT) and Chinese Communist Party (CCP)</li>
+    <li>Warlord era + Japanese invasion weakened national unity</li>
+</ul>
+</div>
 
-      hamburger.addEventListener("click", () => {
-        sidebar.classList.toggle("open");
-      });
+<!-- TIMELINE -->
+<div id="timeline" class="section">
+<h2>Timeline</h2>
 
-      function showSection(id) {
-        sections.forEach((section) => {
-          section.classList.remove("active");
-        });
-        document.getElementById(id).classList.add("active");
-        sidebar.classList.remove("open");
-      }
-    </script>
-  </body>
+<ol>
+    <li><b>1894–1911:</b> Sun Yat-sen organizes revolutionary groups in exile.</li>
+    <li><b>1911:</b> Wuchang Uprising → Qing dynasty collapses → Republic of China (1912).</li>
+    <li><b>1927–1937:</b> KMT–CCP conflict; First United Front collapses.</li>
+    <li><b>1937–1945:</b> KMT & CCP unite against Japan during WWII.</li>
+    <li><b>1946–1949:</b> Chinese Civil War resumes → CCP victory.</li>
+    <li><b>Oct 1, 1949:</b> Mao Zedong proclaims the People’s Republic of China in Beijing.</li>
+</ol>
+</div>
+
+<!-- GALLERY -->
+<div id="gallery" class="section">
+<h2>Image Gallery</h2>
+<p>Images used are public domain or Wikimedia Commons.</p>
+
+<div class="gallery">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Sun_Yat-sen_1911.png" alt="Sun Yat-sen">
+    <p><b>Sun Yat-sen (public domain)</b></p>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Mao_Zedong_in_1959_%28cropped%29.jpg" alt="Mao Zedong">
+    <p><b>Mao Zedong, 1959 (public domain)</b></p>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Flag_of_the_Republic_of_China_1912-1928.svg" alt="Republic of China flag">
+    <p><b>Early Republic of China Flag (public domain)</b></p>
+</div>
+
+</div>
+
+<!-- SOURCES -->
+<div id="sources" class="section">
+<h2>Primary & Secondary Sources</h2>
+
+<h3>Primary Sources</h3>
+<ul>
+    <li>
+        <a href="https://www.loc.gov" target="_blank">Library of Congress — Chinese Collections</a>  
+        <br><i>(Primary documents, photos, political texts)</i>
+    </li>
+    <li>
+        <a href="https://guides.lib.unc.edu/cultural-revolution/primary-sources" target="_blank">
+            UNC Libraries — Cultural Revolution Primary Sources (.edu)
+        </a>
+        <br><i>(Red Guard texts, propaganda posters, speeches)</i>
+    </li>
+    <li>
+        <a href="https://china.usc.edu" target="_blank">
+            USC US–China Institute — Documents & speeches (.edu)
+        </a>
+    </li>
+</ul>
+
+<h3>Secondary Sources (Scholarly)</h3>
+<ul>
+    <li>
+        <a href="http://afe.easia.columbia.edu/special/china_1900/" target="_blank">
+            Columbia University — Asia for Educators (.edu)
+        </a>
+        <br><i>(Excellent overview of Qing → Republic → Revolution)</i>
+    </li>
+
+    <li>
+        <a href="https://spice.fsi.stanford.edu" target="_blank">
+            Stanford University SPICE Program (.edu)
+        </a>
+        <br><i>(Background on civil war, Mao, and 20th-century China)</i>
+    </li>
+
+    <li>
+        <a href="https://www.state.gov/u-s-relations-with-china/" target="_blank">
+            U.S. State Department — Background Notes (.gov)
+        </a>
+        <br><i>(Accurate historical summary for 20th-century China)</i>
+    </li>
+</ul>
+
+<p><b>NOTE:</b> All sources above are high-quality .edu / .gov / institutional archives suitable for History Day.</p>
+</div>
+
+</div>
+</body>
 </html>
