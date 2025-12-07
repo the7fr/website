@@ -4,162 +4,202 @@
 <meta charset="UTF-8">
 <title>Chinese Revolution — History Day Project</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
 <style>
     body {
-        font-family: Arial, sans-serif;
-        background: #f5f5f5;
-        padding: 20px;
         margin: 0;
+        font-family: 'Inter', sans-serif;
+        background: #0e0f11;
+        color: #ffffff;
+        overflow-x: hidden;
     }
-    .container {
-        max-width: 900px;
-        margin: auto;
-        background: white;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+    /* HEADER */
+    header {
+        background: linear-gradient(135deg, #ff004c, #ff8c00);
+        padding: 60px 20px;
+        text-align: center;
+        color: white;
+        position: relative;
     }
-    h1, h2, h3 { margin-top: 25px; }
-    nav a {
-        margin-right: 15px;
-        text-decoration: none;
-        color: #0066ff;
-    }
-    .gallery img {
-        width: 100%;
+
+    header h1 {
+        font-size: 48px;
+        font-weight: 800;
+        letter-spacing: -1px;
         margin-bottom: 10px;
-        border-radius: 6px;
+        animation: fadeDown 1s ease-out;
     }
+
+    header p {
+        font-size: 20px;
+        font-weight: 300;
+        opacity: 0.9;
+        animation: fadeUp 1s ease-out;
+    }
+
+    /* SECTION */
     .section {
-        margin-top: 40px;
-        padding-top: 20px;
-        border-top: 1px solid #ddd;
+        max-width: 900px;
+        margin: 80px auto;
+        padding: 40px;
+        background: rgba(255, 255, 255, 0.06);
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 0 25px rgba(255, 0, 70, 0.3);
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 0.8s ease-out;
+    }
+
+    .section.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    h2 {
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        border-left: 6px solid #ff004c;
+        padding-left: 12px;
+    }
+
+    ul, ol {
+        font-size: 17px;
+        line-height: 1.7;
+        opacity: 0.9;
+    }
+
+    /* NAV BAR */
+    nav {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        padding: 18px;
+        background: #141518;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    nav a {
+        color: #ffffff;
+        font-weight: 500;
+        text-decoration: none;
+        transition: 0.3s;
+        padding-bottom: 4px;
+    }
+
+    nav a:hover {
+        color: #ff4f7b;
+        border-bottom: 2px solid #ff4f7b;
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeDown {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
     }
 </style>
 </head>
 
-<body>
-<div class="container">
 
-<h1>Chinese Revolution — History Day Project</h1>
-<p>This website provides an overview, timeline, images, and primary & secondary sources for the Chinese Revolution.</p>
+<body>
+
+<header>
+    <h1>Chinese Revolution</h1>
+    <p>History Day Project — A Modern Interactive Overview</p>
+</header>
 
 <nav>
     <a href="#overview">Overview</a>
     <a href="#timeline">Timeline</a>
-    <a href="#gallery">Gallery</a>
+    <a href="#causes">Causes</a>
     <a href="#sources">Sources</a>
 </nav>
 
 <!-- OVERVIEW -->
 <div id="overview" class="section">
-<h2>Overview</h2>
-
-<p>
-The term <b>Chinese Revolution</b> can refer to two major events:
-</p>
-
-<ul>
-    <li><b>1911 Xinhai Revolution</b> — overthrew the Qing dynasty and established the Republic of China.<br>
-        <i>(Source: Columbia University Asia for Educators — .edu)</i>
-    </li>
-
-    <li><b>Chinese Communist Revolution (1945–1949)</b> — the Chinese Communist Party defeated the Kuomintang and founded the People’s Republic of China on October 1, 1949.<br>
-        <i>(Verified by Stanford/SPICE + U.S. State Dept.)</i>
-    </li>
-</ul>
-
-<h3>Causes (Short Summary)</h3>
-<ul>
-    <li>Qing dynasty weakened by foreign invasions and internal rebellions</li>
-    <li>Rise of nationalism and Sun Yat-sen’s ideas (Three People’s Principles)</li>
-    <li>Conflict between the Kuomintang (KMT) and Chinese Communist Party (CCP)</li>
-    <li>Warlord era + Japanese invasion weakened national unity</li>
-</ul>
+    <h2>Overview</h2>
+    <p>
+        The Chinese Revolution includes two major turning points in Chinese history:
+    </p>
+    <ul>
+        <li><b>1911 Xinhai Revolution:</b> Ended the Qing dynasty, forming the Republic of China.</li>
+        <li><b>1945–1949 Communist Revolution:</b> Established the People's Republic of China under Mao Zedong.</li>
+    </ul>
 </div>
 
 <!-- TIMELINE -->
 <div id="timeline" class="section">
-<h2>Timeline</h2>
-
-<ol>
-    <li><b>1894–1911:</b> Sun Yat-sen organizes revolutionary groups in exile.</li>
-    <li><b>1911:</b> Wuchang Uprising → Qing dynasty collapses → Republic of China (1912).</li>
-    <li><b>1927–1937:</b> KMT–CCP conflict; First United Front collapses.</li>
-    <li><b>1937–1945:</b> KMT & CCP unite against Japan during WWII.</li>
-    <li><b>1946–1949:</b> Chinese Civil War resumes → CCP victory.</li>
-    <li><b>Oct 1, 1949:</b> Mao Zedong proclaims the People’s Republic of China in Beijing.</li>
-</ol>
+    <h2>Timeline</h2>
+    <ol>
+        <li>1911 — Wuchang Uprising</li>
+        <li>1912 — Republic of China founded</li>
+        <li>1927–1937 — Chinese Civil War (Phase 1)</li>
+        <li>1937–1945 — Second Sino-Japanese War</li>
+        <li>1946–1949 — Civil War resumes</li>
+        <li>October 1, 1949 — People’s Republic of China formed</li>
+    </ol>
 </div>
 
-<!-- GALLERY -->
-<div id="gallery" class="section">
-<h2>Image Gallery</h2>
-<p>Images used are public domain or Wikimedia Commons.</p>
-
-<div class="gallery">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Sun_Yat-sen_1911.png" alt="Sun Yat-sen">
-    <p><b>Sun Yat-sen (public domain)</b></p>
-
-    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Mao_Zedong_in_1959_%28cropped%29.jpg" alt="Mao Zedong">
-    <p><b>Mao Zedong, 1959 (public domain)</b></p>
-
-    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Flag_of_the_Republic_of_China_1912-1928.svg" alt="Republic of China flag">
-    <p><b>Early Republic of China Flag (public domain)</b></p>
-</div>
-
+<!-- CAUSES -->
+<div id="causes" class="section">
+    <h2>Causes</h2>
+    <ul>
+        <li>Weak Qing government & foreign influence</li>
+        <li>Rise of nationalism and Sun Yat-sen</li>
+        <li>Conflict between KMT and CCP</li>
+        <li>Impact of Japanese invasion</li>
+    </ul>
 </div>
 
 <!-- SOURCES -->
 <div id="sources" class="section">
-<h2>Primary & Secondary Sources</h2>
+    <h2>Primary & Secondary Sources</h2>
 
-<h3>Primary Sources</h3>
-<ul>
-    <li>
-        <a href="https://www.loc.gov" target="_blank">Library of Congress — Chinese Collections</a>  
-        <br><i>(Primary documents, photos, political texts)</i>
-    </li>
-    <li>
-        <a href="https://guides.lib.unc.edu/cultural-revolution/primary-sources" target="_blank">
-            UNC Libraries — Cultural Revolution Primary Sources (.edu)
-        </a>
-        <br><i>(Red Guard texts, propaganda posters, speeches)</i>
-    </li>
-    <li>
-        <a href="https://china.usc.edu" target="_blank">
-            USC US–China Institute — Documents & speeches (.edu)
-        </a>
-    </li>
-</ul>
+    <h3>Primary Sources</h3>
+    <ul>
+        <li>Library of Congress — Chinese Archives (.gov)</li>
+        <li>UNC Chapel Hill — Cultural Revolution Documents (.edu)</li>
+        <li>USC U.S.–China Institute — Primary Documents (.edu)</li>
+    </ul>
 
-<h3>Secondary Sources (Scholarly)</h3>
-<ul>
-    <li>
-        <a href="http://afe.easia.columbia.edu/special/china_1900/" target="_blank">
-            Columbia University — Asia for Educators (.edu)
-        </a>
-        <br><i>(Excellent overview of Qing → Republic → Revolution)</i>
-    </li>
-
-    <li>
-        <a href="https://spice.fsi.stanford.edu" target="_blank">
-            Stanford University SPICE Program (.edu)
-        </a>
-        <br><i>(Background on civil war, Mao, and 20th-century China)</i>
-    </li>
-
-    <li>
-        <a href="https://www.state.gov/u-s-relations-with-china/" target="_blank">
-            U.S. State Department — Background Notes (.gov)
-        </a>
-        <br><i>(Accurate historical summary for 20th-century China)</i>
-    </li>
-</ul>
-
-<p><b>NOTE:</b> All sources above are high-quality .edu / .gov / institutional archives suitable for History Day.</p>
+    <h3>Secondary Sources</h3>
+    <ul>
+        <li>Columbia University — Asia for Educators (.edu)</li>
+        <li>Stanford SPICE Program (.edu)</li>
+        <li>U.S. State Department Historical Notes (.gov)</li>
+    </ul>
 </div>
 
-</div>
+<script>
+    // Scroll reveal animation
+    const sections = document.querySelectorAll('.section');
+
+    function reveal() {
+        const trigger = window.innerHeight * 0.88;
+        sections.forEach(section => {
+            const top = section.getBoundingClientRect().top;
+            if (top < trigger) {
+                section.classList.add('visible');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', reveal);
+    reveal();
+</script>
+
 </body>
 </html>
