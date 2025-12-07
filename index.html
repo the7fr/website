@@ -1,92 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chinese Revolution — History Day Project</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>History Day Project</title>
+
+<style>
+    /* Google Font */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Inter", sans-serif;
+    }
+
+    body {
+        background: linear-gradient(135deg, #0a0a0f, #1a1a25);
+        color: white;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+    }
+
+    header {
+        width: 100%;
+        padding: 25px 60px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: rgba(10, 10, 15, 0.7);
+        backdrop-filter: blur(10px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    nav a {
+        color: white;
+        margin-left: 25px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: 0.3s;
+    }
+
+    nav a:hover {
+        opacity: 0.7;
+    }
+
+    .hero {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 60px;
+        animation: fadeIn 1.5s ease forwards;
+    }
+
+    .hero h1 {
+        font-size: 70px;
+        font-weight: 700;
+        background: linear-gradient(90deg, #ff637d, #ffa86b);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 20px;
+    }
+
+    .hero p {
+        font-size: 22px;
+        opacity: 0.7;
+        max-width: 700px;
+    }
+
+    section {
+        padding: 120px 60px;
+        min-height: 70vh;
+        opacity: 0;
+        transform: translateY(60px);
+        transition: 0.8s ease;
+    }
+
+    .show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .section-title {
+        font-size: 40px;
+        margin-bottom: 30px;
+        background: linear-gradient(90deg, #76baff, #9d76ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .box {
+        background: rgba(255,255,255,0.05);
+        padding: 25px;
+        border-radius: 14px;
+        border: 1px solid rgba(255,255,255,0.08);
+        backdrop-filter: blur(8px);
+    }
+
+</style>
 </head>
 <body>
 
-  <!-- Hero -->
-  <header class="hero">
-    <div class="hero-content">
-      <h1 class="fade-up">Chinese Revolution</h1>
-      <p class="subtitle fade-up">History Day — Research Project</p>
-      <a href="#overview" class="scroll-btn fade-up">Explore ↓</a>
+<header>
+    <div class="logo">HDP</div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#section1">Section 1</a>
+        <a href="#section2">Section 2</a>
+        <a href="#sources">Sources</a>
+    </nav>
+</header>
+
+<div class="hero" id="home">
+    <h1>Your Title Here</h1>
+    <p>Your short introduction goes here. You can add animations, images, and more content later.</p>
+</div>
+
+<section id="section1">
+    <h2 class="section-title">Section 1</h2>
+    <div class="box">
+        Add your content here later.
     </div>
-  </header>
+</section>
 
-  <!-- Navigation -->
-  <nav class="nav">
-    <a href="#overview">Overview</a>
-    <a href="#timeline">Timeline</a>
-    <a href="#causes">Causes</a>
-    <a href="#sources">Sources</a>
-  </nav>
+<section id="section2">
+    <h2 class="section-title">Section 2</h2>
+    <div class="box">
+        Add your content here later.
+    </div>
+</section>
 
-  <main>
+<section id="sources">
+    <h2 class="section-title">Sources</h2>
+    <div class="box">
+        Your sources will go here.
+    </div>
+</section>
 
-    <!-- Overview -->
-    <section id="overview" class="card reveal">
-      <h2>Overview</h2>
-      <p>
-        The Chinese Revolution refers to the major political transformations in China during the 
-        20th century. The 1911 Xinhai Revolution ended centuries of imperial rule (Source 2), 
-        while the Communist victory in 1949 established the People’s Republic of China (Source 1).
-      </p>
-    </section>
+<script>
+    // Section scroll animation reveal
+    const sections = document.querySelectorAll("section");
 
-    <!-- Timeline -->
-    <section id="timeline" class="card reveal">
-      <h2>Timeline</h2>
-      <ul>
-        <li>1894–1911 — Revolutionary movements grow before Xinhai (Source 2)</li>
-        <li>1911 — Qing Dynasty ends (Source 2)</li>
-        <li>1927–1937 — KMT vs CCP conflicts (Source 9)</li>
-        <li>1937–1945 — Japanese invasion (Source 1)</li>
-        <li>1946–1949 — Civil war → PRC founded (Source 1)</li>
-      </ul>
-    </section>
+    function reveal() {
+        let windowHeight = window.innerHeight;
+        sections.forEach(sec => {
+            let top = sec.getBoundingClientRect().top;
+            if (top < windowHeight - 100) {
+                sec.classList.add("show");
+            }
+        });
+    }
 
-    <!-- Causes -->
-    <section id="causes" class="card reveal">
-      <h2>Causes</h2>
-      <ul>
-        <li>Weakening of Qing rule (Source 2)</li>
-        <li>Nationalism & new political ideas (Source 10)</li>
-        <li>KMT & CCP political conflict (Source 9)</li>
-        <li>Impact of Japanese invasion (Source 1)</li>
-      </ul>
-    </section>
-
-    <!-- Sources -->
-    <section id="sources" class="card reveal">
-      <h2>Sources</h2>
-      <p>Click any source to open it.</p>
-
-      <ol class="source-list">
-        <li><a href="https://history.state.gov/milestones/1945-1952/chinese-rev" target="_blank">1 — Secondary</a></li>
-        <li><a href="https://afe.easia.columbia.edu/main_pop/ps/ps_china.htm" target="_blank">2 — Secondary</a></li>
-        <li><a href="https://sova.si.edu/record/fsa.a2004.03?s=0&n=10&t=K&q=*&i=0" target="_blank">3 — Primary</a></li>
-        <li><a href="https://thetricontinental.org/newsletterissue/2-2024-china-socialism/" target="_blank">4 — Secondary</a></li>
-        <li><a href="https://www.gettyimages.com/photos/xinhai-revolution" target="_blank">5 — Primary</a></li>
-        <li><a href="https://www.nationalarchives.gov.uk/education/resources/the-chinese-civil-war/the-chinese-civil-war-source-2a/" target="_blank">6 — Primary</a></li>
-        <li><a href="https://www.thechinastory.org/chinese-newspapers-and-red-guard-tabloids-a-cultural-revolution-puzzle/" target="_blank">7 — Primary</a></li>
-        <li><a href="https://www.britannica.com/event/Chinese-Revolution-1911-1912" target="_blank">8 — Secondary</a></li>
-        <li><a href="https://www.sup.org/books/asian-studies/politics-rights-and-1911-revolution-china/excerpt/introduction" target="_blank">9 — Secondary</a></li>
-        <li><a href="https://ph.china-embassy.gov.cn/eng/zt/Xinhai/201201/t20120112_1334732.htm" target="_blank">10 — Secondary</a></li>
-      </ol>
-    </section>
-
-  </main>
-
-  <footer>
-    <p>© Chinese Revolution Project — Designed with animations & modern UI.</p>
-  </footer>
-
-  <script src="script.js"></script>
+    window.addEventListener("scroll", reveal);
+    reveal();
+</script>
 
 </body>
 </html>
