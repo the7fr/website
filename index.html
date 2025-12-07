@@ -1,43 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>History Day Project</title>
-    <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>History Day Project</title>
+
+<style>
+    /* Google Font */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Inter", sans-serif;
+    }
+
+    body {
+        background: linear-gradient(135deg, #0a0a0f, #1a1a25);
+        color: white;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+    }
+
+    header {
+        width: 100%;
+        padding: 25px 60px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: rgba(10, 10, 15, 0.7);
+        backdrop-filter: blur(10px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    nav a {
+        color: white;
+        margin-left: 25px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: 0.3s;
+    }
+
+    nav a:hover {
+        opacity: 0.7;
+    }
+
+    .hero {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 60px;
+        animation: fadeIn 1.5s ease forwards;
+    }
+
+    .hero h1 {
+        font-size: 70px;
+        font-weight: 700;
+        background: linear-gradient(90deg, #ff637d, #ffa86b);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 20px;
+    }
+
+    .hero p {
+        font-size: 22px;
+        opacity: 0.7;
+        max-width: 700px;
+    }
+
+    section {
+        padding: 120px 60px;
+        min-height: 70vh;
+        opacity: 0;
+        transform: translateY(60px);
+        transition: 0.8s ease;
+    }
+
+    .show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .section-title {
+        font-size: 40px;
+        margin-bottom: 30px;
+        background: linear-gradient(90deg, #76baff, #9d76ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .box {
+        background: rgba(255,255,255,0.05);
+        padding: 25px;
+        border-radius: 14px;
+        border: 1px solid rgba(255,255,255,0.08);
+        backdrop-filter: blur(8px);
+    }
+
+</style>
 </head>
 <body>
 
 <header>
     <div class="logo">HDP</div>
     <nav>
-        <a href="#intro">Home</a>
+        <a href="#home">Home</a>
         <a href="#section1">Section 1</a>
         <a href="#section2">Section 2</a>
         <a href="#sources">Sources</a>
     </nav>
 </header>
 
-<section class="hero" id="intro">
+<div class="hero" id="home">
     <h1>Your Title Here</h1>
-    <p>Your intro goes here later. This is just placeholder.</p>
+    <p>Your short introduction goes here. You can add animations, images, and more content later.</p>
+</div>
+
+<section id="section1">
+    <h2 class="section-title">Section 1</h2>
+    <div class="box">
+        Add your content here later.
+    </div>
 </section>
 
-<section class="content" id="section1">
-    <h2>Section 1</h2>
-    <div class="box">Add your content here later.</div>
+<section id="section2">
+    <h2 class="section-title">Section 2</h2>
+    <div class="box">
+        Add your content here later.
+    </div>
 </section>
 
-<section class="content" id="section2">
-    <h2>Section 2</h2>
-    <div class="box">Add your content here later.</div>
+<section id="sources">
+    <h2 class="section-title">Sources</h2>
+    <div class="box">
+        Your sources will go here.
+    </div>
 </section>
 
-<section class="content" id="sources">
-    <h2>Sources</h2>
-    <div class="box">Your sources will go here.</div>
-</section>
+<script>
+    // Section scroll animation reveal
+    const sections = document.querySelectorAll("section");
 
-<script src="script.js"></script>
+    function reveal() {
+        let windowHeight = window.innerHeight;
+        sections.forEach(sec => {
+            let top = sec.getBoundingClientRect().top;
+            if (top < windowHeight - 100) {
+                sec.classList.add("show");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", reveal);
+    reveal();
+</script>
+
 </body>
 </html>
