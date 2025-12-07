@@ -1,14 +1,16 @@
-// Reveal cards on scroll
-const revealElements = document.querySelectorAll(".card");
+// Reveal sections on scroll
+const sections = document.querySelectorAll(".content");
 
-function revealOnScroll() {
-  revealElements.forEach(el => {
-    const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 100) {
-      el.classList.add("visible");
-    }
-  });
+function revealSections() {
+    let windowHeight = window.innerHeight;
+
+    sections.forEach(section => {
+        let top = section.getBoundingClientRect().top;
+        if (top < windowHeight - 120) {
+            section.classList.add("show");
+        }
+    });
 }
 
-window.addEventListener("scroll", revealOnScroll);
-revealOnScroll();
+window.addEventListener("scroll", revealSections);
+revealSections();
